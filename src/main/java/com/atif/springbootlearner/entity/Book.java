@@ -6,14 +6,7 @@ import java.util.Objects;
 @Entity
 public class Book {
     @Id
-    @SequenceGenerator(
-            name = "book_id_sequence",
-            sequenceName = "book_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "book_id_sequence"
-    )
+
     private Integer id;
     private String name;
     private String author;

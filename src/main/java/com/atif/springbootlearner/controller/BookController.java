@@ -2,6 +2,7 @@ package com.atif.springbootlearner.controller;
 
 import com.atif.springbootlearner.entity.Book;
 import com.atif.springbootlearner.repository.BookRepository;
+import com.atif.springbootlearner.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,14 +11,14 @@ import java.util.List;
 @RequestMapping("book")
 public class BookController {
 
-    private final BookRepository bookRepository;
+    private final BookService bookService;
 
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @GetMapping
     public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+        return bookService.getAllBooks();
     }
 }

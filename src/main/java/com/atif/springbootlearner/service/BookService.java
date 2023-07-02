@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class BookService {
+
     private final BookRepository bookRepository;
 
     public BookService(BookRepository bookRepository) {
@@ -17,5 +18,21 @@ public class BookService {
 
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
+    }
+
+    public Book getBookById(Integer id) {
+        return bookRepository.findById(id).get();
+    }
+
+    public void saveOrUpdate(Book book) {
+        bookRepository.save(book);
+    }
+
+    public void deleteById(Integer id) {
+        bookRepository.deleteById(id);
+    }
+
+    public void deleteAll() {
+        bookRepository.deleteAll();
     }
 }

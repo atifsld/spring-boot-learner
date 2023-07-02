@@ -21,4 +21,31 @@ public class BookController {
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
+
+    @GetMapping("/{id}")
+    public Book getBook(@PathVariable("id") Integer id) {
+        return bookService.getBookById(id);
+    }
+
+    @PostMapping
+    private Book saveBook(@RequestBody Book book) {
+        bookService.saveOrUpdate(book);
+        return book;
+    }
+
+    @PutMapping
+    private Book updateBook(@RequestBody Book book) {
+        bookService.saveOrUpdate(book);
+        return book;
+    }
+
+    @DeleteMapping("/{id}")
+    private void deleteBook(@PathVariable("id") Integer id) {
+        bookService.deleteById(id);
+    }
+
+    @DeleteMapping
+    private void deleteAllBooks() {
+        bookService.deleteAll();
+    }
 }

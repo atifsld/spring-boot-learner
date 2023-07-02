@@ -1,7 +1,6 @@
-package entity;
+package com.atif.springbootlearner.entity;
 
 import jakarta.persistence.*;
-
 import java.util.Objects;
 
 @Entity

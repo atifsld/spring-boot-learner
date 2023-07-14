@@ -1,22 +1,6 @@
 services:
-  db:
-    container_name: postgres
-    image: postgres
-    environment:
-      POSTGRES_USER: atif
-      POSTGRES_PASSWORD: password
-      PGDATA: /data/postgres
-    volumes:
-      - db:/data/postgres
+  mongodb:
+    image: mongo
+    restart: always
     ports:
-      - "5432:5432"
-    networks:
-      - db
-    restart: unless-stopped
-
-networks:
-  db:
-    driver: bridge
-
-volumes:
-  db:
+      - 27017:27017

@@ -1,13 +1,6 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/book
-    username: atif
-    password: password
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: bookdb

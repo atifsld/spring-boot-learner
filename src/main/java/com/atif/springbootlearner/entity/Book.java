@@ -1,12 +1,14 @@
 package com.atif.springbootlearner.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.annotation.Collation;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
+
 import java.util.Objects;
 
-@Entity
+@Document
 public class Book {
-    @Id
-
+    @MongoId
     private Integer id;
     private String name;
     private String author;
